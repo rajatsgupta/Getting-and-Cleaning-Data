@@ -86,3 +86,6 @@ Step 28	:	Using the DCast function, cast the temp_tidy data set into a tidy one 
 Step 29	:	Write the data of tidyData into a text file  with separator and eol and no rownames settings set
 
 Step 30	:	Remove all temporary variables created.
+
+
+References : Coursera Discussion Forums; Google.com;
