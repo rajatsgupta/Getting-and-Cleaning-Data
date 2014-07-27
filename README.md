@@ -1,13 +1,13 @@
 Getting-and-Cleaning-Data
 =========================
 
-The following text will provide the steps to reproduce the tidy dataset required as part of the Projec Assignment. The requirement is to 
+The following text will provide the steps to reproduce the tidy dataset required as part of the Project Assignment. The requirement is to 
 
 Merge the training and the test sets to create one data set.
 
-Extract only the measurements on the mean and standard deviation for each measurement. 
+Extract only the measurements on the mean and standard deviation for each measurement.
 
-Uses descriptive activity names to name the activities in the data set
+Uses descriptive activity names to name the activities in the data set.
 
 Appropriately labels the data set with descriptive variable names. 
 
