@@ -56,7 +56,7 @@ temp_tidy<-melt(data=val, na.rm=T, id.vars=c("subjectid", "activityname"), measu
 
 tidyData<-dcast(temp_tidy, subjectid+activityname~variable, mean)
 
-write.table(tidyData, file="tidyData.txt", sep=",", eol="\r\n")
+write.table(tidyData, file="tidyData.txt", sep=",", eol="\r\n",row.names=F)
 
 rm("train_Combined","test_Combined", "y_train", "X_train", "subject_train", "y_test", "X_test", "subject_test", "val", 
    "temp_tidy", "activity_labels", "features", "col2Retrieve", "indexes", "meanCols2Retrieve", "stdCols2Retrieve")

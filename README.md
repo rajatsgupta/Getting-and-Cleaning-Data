@@ -59,8 +59,7 @@ Step 15	:	Set the column name of the subject_test data frame to "SubjectId"
 
 Step 16	:	Set the column name of the subject_train data frame to "SubjectId"
 
-Step 17	:	Using cbind function, add  SubjectId column of Subject_test data frame as subject id and Activity_Names 
-column of y_test data frame as activityname to the X_test data frame and store the resultant data frame to a variable named test_Combined
+Step 17	:	Using cbind function, add  SubjectId column of Subject_test data frame as subject id and Activity_Names column of y_test data frame as activityname to the X_test data frame and store the resultant data frame to a variable named test_Combined
 
 Step 18	:	Using cbind function, add  SubjectId column of Subject_train data frame as subject id and Activity_Names column of y_train data frame as activityname to the X_train data frame and store the resultant data frame to a variable named train_Combined
 
@@ -84,6 +83,6 @@ Step 27	:	Using the melt function, melt the val data frame by removing any missi
 
 Step 28	:	Using the DCast function, cast the temp_tidy data set into a tidy one named tidyData, by grouping based on the subjectid and activityname with the means of each measures
 
-Step 29	:	Write the data of tidyData into a text file  with separator and eol settings set
+Step 29	:	Write the data of tidyData into a text file  with separator and eol and no rownames settings set
 
 Step 30	:	Remove all temporary variables created.
