@@ -18,6 +18,8 @@ colnames(X_test)<-features$V2
 
 colnames(X_train)<-features$V2
 
+library(plyr)
+
 y_test<-data.frame(merge(y_test, activity_labels, by.x="V1", by.y="V1", sort=F, stringsAsFactors=F)[,"V2"],stringsAsFactors=F)
 
 colnames(y_test)<-"activity_names"
