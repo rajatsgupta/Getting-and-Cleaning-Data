@@ -38,9 +38,15 @@ train_Combined<-cbind(subjectid= subject_train$SubjectId, activityname= y_train$
 
 val<-join_all(list(train_Combined, test_Combined),type="full", match="all")
 
-indexes<-grep("mean()|std()", x=features$V2, ignore.case=T)
+indexes<-grep("mean()", x=features$V2, fixed=T)
 
-col2Retrieve<-as.character(features[(features$V1 %in% (indexes)),"V2"])
+meanCols2Retrieve<-as.character(features[(features$V1 %in% (indexes)),"V2"])
+
+indexes<-grep("std()", x=features$V2, fixed=T)
+
+stdCols2Retrieve<-as.character(features[(features$V1 %in% (indexes)),"V2"])
+
+col2Retrieve<-c(meanCols2Retrieve, stdCols2Retrieve)
 
 val<- val[,c("subjectid","activityname", col2Retrieve)]
 
@@ -52,6 +58,5 @@ tidyData<-dcast(temp_tidy, subjectid+activityname~variable, mean)
 
 write.table(tidyData, file="tidyData.txt", sep=",", eol="\r\n")
 
-rm("train_Combined","test_Combined", "y_train", "X_train", "subject_train", "y_test", "X_test", "subject_test", "val", "temp_tidy", "activity_labels", "features", "col2Retrieve", "indexes")
-
-
+rm("train_Combined","test_Combined", "y_train", "X_train", "subject_train", "y_test", "X_test", "subject_test", "val", 
+   "temp_tidy", "activity_labels", "features", "col2Retrieve", "indexes", "meanCols2Retrieve", "stdCols2Retrieve")
