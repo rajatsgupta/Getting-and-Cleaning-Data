@@ -66,18 +66,24 @@ Step 18	:	Using cbind function, add  SubjectId column of Subject_train data fram
 
 Step 19	:	Using the join_all function of the plyr package join the test_Combined and train_Combined data frames into a single data frame with type=Full and match = all set, so that a full join is achieved and store the resultant data in a variable named val
 
-Step 20	:	Using the grep function retrieve all the column indices where the string "mean()" or "std()" string occurs in the features data frame's V2 variable. Store this integer vector in a variable named indexes
+Step 20	:	Using the grep function retrieve all the column indices where the string "mean()" occurs in the features data frame's V2 variable. Store this integer vector in a variable named indexes
 
-Step 21	:	Retrieve the column names from the features data frame based on the indexes vector retrieved from Step 20. Ensure the column names returned is a character vector. Store in a variable named col2Retrieve.
+Step 21	:	Retrieve the column names from the features data frame based on the indexes vector retrieved from Step 20. Ensure the column names returned is a character vector. Store in a variable named meanCols2Retrieve.
 
-Step 22	:	Subset val data frame retrieved in Step 19 for the columns "subjectid", "activityname" and the character vector retrieved in Step 21 and set the data into the same val data frame
+Step 22	:	Using the grep function retrieve all the column indices where the string "std()" occurs in the features data frame's V2 variable. Store this integer vector in the variable named indexes
 
-Step 23	:	Load library reshape2
+Step 23	:	Retrieve the column names from the features data frame based on the indexes vector retrieved from Step 22. Ensure the column names returned is a character vector. Store in a variable named stdCols2Retrieve.
 
-Step 24	:	Using the melt function, melt the val data frame by removing any missing values, where the id would be the subjectid and activity name, whereas the measures would be the remaining col2Retrieve character vector retrieved from Step 21. Store this melted data into a variable named temp_tidy
+Step 24	:	Combine the 2 character vectors created in Step 21 and Step 23 and store in a variable named col2Retrieve
 
-Step 25	:	Using the DCast function, cast the temp_tidy data set into a tidy one named tidyData, by grouping based on the subjectid and activityname with the means of each measures
+Step 25	:	Subset val data frame retrieved in Step 19 for the columns "subjectid", "activityname" and the character vector col2Retrieve retrieved in Step 24 and set the data into the same val data frame
 
-Step 26	:	Write the data of tidyData into a text file  with separator and eol settings set
+Step 26	:	Load library reshape2
 
-Step 27	:	Remove all temporary variables created.
+Step 27	:	Using the melt function, melt the val data frame by removing any missing values, where the id would be the subjectid and activity name, whereas the measures would be the remaining col2Retrieve character vector retrieved from Step 21. Store this melted data into a variable named temp_tidy
+
+Step 28	:	Using the DCast function, cast the temp_tidy data set into a tidy one named tidyData, by grouping based on the subjectid and activityname with the means of each measures
+
+Step 29	:	Write the data of tidyData into a text file  with separator and eol settings set
+
+Step 30	:	Remove all temporary variables created.
